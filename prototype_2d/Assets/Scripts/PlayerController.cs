@@ -42,10 +42,15 @@ public class PlayerController : MonoBehaviour
         //Moves player
         transform.position += MovePlayer();
 
+
+    }
+
+    private void Update()
+    {
         //Spawns bullet on mouse click (not held down)
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(bullet, spawnPoint.transform.position, Quaternion.Euler(90f, -MouseRotation(), 0f));   
+            Instantiate(bullet, spawnPoint.transform.position, Quaternion.Euler(90f, -MouseRotation(), 0f));
         }
     }
 
