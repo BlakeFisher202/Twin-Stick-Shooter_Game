@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField, Range (0, 10)]
+    [SerializeField, Range (0, 100)]
     float maxDistance;
 
-    [SerializeField, Range (0, 10)]
+    [SerializeField, Range (0, 100)]
     float speed;
 
     [SerializeField, Range(0, 10)]
