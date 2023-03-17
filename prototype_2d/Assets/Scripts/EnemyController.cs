@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnemyController : MonoBehaviour
 {
@@ -15,7 +16,12 @@ public class EnemyController : MonoBehaviour
     GameObject player;
 
     Health healthController;
-    
+
+    [Serializable]
+    struct TelemetryData
+    {
+        public float bulletsHit;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +49,14 @@ public class EnemyController : MonoBehaviour
             //Reduces the enemy's health by the damage amount set in bullet script
             Bullet bullet = collision.gameObject.GetComponent<Bullet>();
             healthController.health -= bullet.damage;
+
+            var data = new TelemetryData()
+            {
+                bulletsHit =+ 1
+            };
+
+            //Log Telemetry
+            TelemetryLogger.Log(this, "BulletHit", data);
 
             //Sets percentage of health bar to "fill"
             healthController.healthBarPerc = healthController.getHealthBarPerc();

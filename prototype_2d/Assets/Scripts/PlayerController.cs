@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,6 +23,16 @@ public class PlayerController : MonoBehaviour
     //cube so we can tell where mouse is hitting
     public GameObject testObject;
 
+    // Telemetry Data Input Struct
+    [Serializable]
+    struct TelemetryData
+    {
+        public Vector2 playerPos;
+        public string objectName;
+        public float bulletsFired;
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +40,9 @@ public class PlayerController : MonoBehaviour
         healthController = GetComponent<Health>();
         //Finds spawnPoint gameobject
         spawnPoint = GameObject.Find("SpawnPoint");
+
+        //Start Telemetry Coroutine
+        StartCoroutine("Telemetry");
     }
 
     // Update is called once per frame
@@ -37,7 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         //Rotates player
         transform.rotation = Quaternion.Euler(0, -MouseRotation(), 0);
-        
+
 
         //Moves player
         transform.position += MovePlayer();
@@ -51,7 +64,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Instantiate(bullet, spawnPoint.transform.position, Quaternion.Euler(90f, -MouseRotation(), 0f));
+
+            var data = new TelemetryData()
+            {
+                bulletsFired =+ 1
+            };
+
+            TelemetryLogger.Log(this, "BulletFired", data);
         }
+
     }
 
     //Gets angle between player and mouse
@@ -63,7 +84,8 @@ public class PlayerController : MonoBehaviour
         //If it hits an object, it sets mousePosInWorld to where the ray hit
         //NOTE: if mouse cursor goes into the void this won't work and mousePosInWorld will stay at Vector3.zero
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit)) {
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
             mousePosInWorld = ray.GetPoint(hit.distance);
         }
 
@@ -74,7 +96,7 @@ public class PlayerController : MonoBehaviour
         float angleRads = Mathf.Atan2(diff.z, diff.x);
         float angleDegs = angleRads * Mathf.Rad2Deg + 90f;
         return angleDegs;
-    } 
+    }
 
     Vector3 MovePlayer()
     {
@@ -102,9 +124,25 @@ public class PlayerController : MonoBehaviour
     {
         //Player loses health when an enemy touches them
         //NOTE: TEMPORARY UNTIL ENEMIES CAN ATTACK
-        if(collision.tag == "Enemy") healthController.health -= 5f;
+        if (collision.tag == "Enemy") healthController.health -= 5f;
 
         //Sets percentage of health bar fill in health script attatched to player
         healthController.healthBarPerc = healthController.getHealthBarPerc();
+    }
+
+    //Telemetry to get the player position
+    IEnumerator Telemetry()
+    {
+        //Serialize data struct
+        var data = new TelemetryData()
+        {
+            playerPos = transform.position,
+            objectName = this.name
+        };
+
+        //Log Telemetry
+        TelemetryLogger.Log(this, "Position", data);
+
+        yield return new WaitForSeconds(10);
     }
 }
