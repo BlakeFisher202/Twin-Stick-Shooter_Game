@@ -2703,7 +2703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1365762134}
-  cameraOffset: {x: 0, y: 10, z: -6}
+  cameraOffset: {x: 0, y: 15, z: -10}
   smoothSpeed: 0.15
   playerScript: {fileID: 1365762137}
   mousePos: {x: 0, y: 0, z: 0}

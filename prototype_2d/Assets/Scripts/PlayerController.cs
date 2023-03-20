@@ -144,5 +144,7 @@ public class PlayerController : MonoBehaviour
         TelemetryLogger.Log(this, "Position", data);
 
         yield return new WaitForSeconds(10);
+
+        yield return StartCoroutine(Telemetry());
     }
 }
