@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     public GameObject bullet;
     GameObject spawnPoint;
     Health healthController;
+    public Rigidbody rb;
+
+    public ParticleSystem flash;
 
     //cube so we can tell where mouse is hitting
     public GameObject testObject;
@@ -43,6 +46,8 @@ public class PlayerController : MonoBehaviour
 
         //Start Telemetry Coroutine
         StartCoroutine("Telemetry");
+
+       // rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -53,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
 
         //Moves player
-        transform.position += MovePlayer();
+        rb.MovePosition(rb.position + MovePlayer());
 
 
     }
@@ -64,6 +69,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Instantiate(bullet, spawnPoint.transform.position, Quaternion.Euler(90f, -MouseRotation(), 0f));
+            flash.Play();
 
             var data = new TelemetryData()
             {

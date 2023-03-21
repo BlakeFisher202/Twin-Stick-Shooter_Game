@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 852197277397381382}
   - component: {fileID: 2364505379563472136}
   - component: {fileID: 1865672635806949185}
+  - component: {fileID: 3176548572177721466}
   m_Layer: 2
   m_Name: Bullet
   m_TagString: Bullet
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5295129899702706509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.73, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.21659912, y: 0.50924003, z: 0.21832925}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 922bc8c1455c72b43aa562fd930b98f5, type: 2}
+  - {fileID: 2100000, guid: 23857ba7b39c3bc4bb9ee8a4e31f3ab4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,7 +96,7 @@ SphereCollider:
   m_GameObject: {fileID: 5295129899702706509}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -112,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDistance: 50
-  speed: 20
+  speed: 45
   damage: 2.5
 --- !u!54 &1865672635806949185
 Rigidbody:
@@ -130,3 +131,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &3176548572177721466
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5295129899702706509}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.62
+  m_Height: 1.054074
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.021102974, z: 0.00031197473}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -47,9 +48,7 @@ public class Health : MonoBehaviour
         //If the player loses their health, it respawns them in the center of the map
         //NOTE: This is temporary until there is a losing condition or respawn points
         if (health <= 0 && gameObject.name.Equals("Player")) {
-            transform.position = new Vector3(0, 1, 0);
-            health = maxHealth;
-            healthBarPerc = getHealthBarPerc();
+            Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
         } 
         //If an enemy loses their health, they dissapear
         else if (health <= 0) {

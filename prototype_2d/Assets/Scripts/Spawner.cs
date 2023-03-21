@@ -10,6 +10,10 @@ public class Spawner : MonoBehaviour
     public GameObject[] Spawners;
 
     public int spawnPoint;
+
+    public float spawnTimer;
+    public float spawnedTime = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +23,13 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        spawnedTime += Time.deltaTime;
         //If there is no enemy in the scene it spawns an enemy
-        if (GameObject.FindGameObjectWithTag("Enemy") == null)
+        if (spawnedTime >= spawnTimer)
         {
             spawnPoint = Random.Range(0, Spawners.Length);
             spawnObjectRandom(enemy);
+            spawnedTime = 0f;
         } 
     }
 
