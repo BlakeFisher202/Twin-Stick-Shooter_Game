@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userName: Hot Dog Stand
   secret: monster quotation
-  _version: 1.0
+  _version: 2.0
   _serverURL: https://dd-telemetry2.herokuapp.com/
   serverCommunication: 1
   debugLogging: 0

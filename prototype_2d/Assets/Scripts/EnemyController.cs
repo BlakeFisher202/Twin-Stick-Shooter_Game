@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour
 
         navmesh.SetDestination(player.transform.position);
 
-        Debug.Log(navmesh.speed);
+        
         
 
 

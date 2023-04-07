@@ -18,19 +18,24 @@ public class scr_camera : MonoBehaviour
 
     public GameObject testObjectDesirePOS;//test cube
 
+    Vector3 _velocity;
 
-    void Update()
+
+    void LateUpdate()
     {
+        // The line below may cause a feedback loop
         testObjectDesirePOS.transform.position = (player.transform.position + mousePos) / 2;
 
         mousePos = playerScript.testObject.transform.position;
 
-            distance = Vector3.Distance(player.position, mousePos);
+        distance = Vector3.Distance(player.position, mousePos);
 
-            desiredPosition = ((player.transform.position + testObjectDesirePOS.transform.position) / 2) + cameraOffset;
+        desiredPosition = ((player.transform.position + testObjectDesirePOS.transform.position) / 2) + cameraOffset;
 
-            smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-            transform.position = smoothedPosition;
+        //smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        //Changed to use smoothdamp
+        smoothedPosition = Vector3.SmoothDamp(transform.position, desiredPosition, ref _velocity, 0.5f);
+        transform.position = smoothedPosition;
 
         transform.LookAt(smoothedPosition);
     }

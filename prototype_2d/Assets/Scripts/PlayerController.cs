@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     [Serializable]
     struct TelemetryData
     {
-        public Vector2 playerPos;
+        public Vector3 playerPos;
         public string objectName;
         public float bulletsFired;
     }
@@ -47,24 +47,26 @@ public class PlayerController : MonoBehaviour
         //Start Telemetry Coroutine
         StartCoroutine("Telemetry");
 
-       // rb = GetComponent<Rigidbody>();
+        // rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         //Rotates player
-        transform.rotation = Quaternion.Euler(0, -MouseRotation(), 0);
+        //Changed from transform to allow for ridigbody interpolation
+        rb.MoveRotation(Quaternion.Euler(0, -MouseRotation(), 0));
 
 
         //Moves player
-        rb.MovePosition(rb.position + MovePlayer());
-
-
+        //rb.MovePosition(rb.position + MovePlayer());
+        MovePlayer();
+        rb.velocity = velocity;
     }
 
     private void Update()
     {
+        MouseRotation();
         //Spawns bullet on mouse click (not held down)
         if (Input.GetMouseButtonDown(0))
         {
@@ -73,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
             var data = new TelemetryData()
             {
-                bulletsFired =+ 1
+                bulletsFired = +1
             };
 
             TelemetryLogger.Log(this, "BulletFired", data);
@@ -90,15 +92,17 @@ public class PlayerController : MonoBehaviour
         //If it hits an object, it sets mousePosInWorld to where the ray hit
         //NOTE: if mouse cursor goes into the void this won't work and mousePosInWorld will stay at Vector3.zero
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit))
+
+        var ground = new Plane(Vector3.up, Vector3.zero);
+        if (ground.Raycast(ray, out float distance)) //Physics.Raycast(ray, out RaycastHit hit))
         {
-            mousePosInWorld = ray.GetPoint(hit.distance);
+            mousePosInWorld = ray.GetPoint(distance);
         }
 
         testObject.transform.position = mousePosInWorld;
 
         //Calculates angle and converts it to degrees
-        Vector3 diff = transform.position - mousePosInWorld;
+        Vector3 diff = rb.position - mousePosInWorld;
         float angleRads = Mathf.Atan2(diff.z, diff.x);
         float angleDegs = angleRads * Mathf.Rad2Deg + 90f;
         return angleDegs;
@@ -106,6 +110,7 @@ public class PlayerController : MonoBehaviour
 
     Vector3 MovePlayer()
     {
+        velocity = rb.velocity;
         //Gets player input and clamps the magnitude to 1 so player movement isn't faster diagonally
         Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         input = Vector3.ClampMagnitude(input, 1f);
@@ -118,8 +123,9 @@ public class PlayerController : MonoBehaviour
 
         //Sets the velocity of the player with MoveTowards, using the current velocity as the current,
         //the target as desiredVelocity, and the maxDelta as maxSpeedChange
-        velocity.x = Mathf.MoveTowards(velocity.x, desiredVelocity.x, maxSpeedChange);
-        velocity.z = Mathf.MoveTowards(velocity.z, desiredVelocity.z, maxSpeedChange);
+        velocity = Vector3.MoveTowards(velocity, desiredVelocity, maxSpeedChange);
+        //velocity.x = Mathf.MoveTowards(velocity.x, desiredVelocity.x, maxSpeedChange);
+        //velocity.z = Mathf.MoveTowards(velocity.z, desiredVelocity.z, maxSpeedChange);
 
         //Sets the displacement between each frame to velocity * Time.deltaTime
         Vector3 displacement = velocity * Time.deltaTime;
@@ -130,7 +136,7 @@ public class PlayerController : MonoBehaviour
     {
         //Player loses health when an enemy touches them
         //NOTE: TEMPORARY UNTIL ENEMIES CAN ATTACK
-        if (collision.tag == "Enemy") healthController.health -= 5f;
+        if (collision.CompareTag("Enemy")) healthController.health -= 2f;
 
         //Sets percentage of health bar fill in health script attatched to player
         healthController.healthBarPerc = healthController.getHealthBarPerc();

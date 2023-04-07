@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class Health : MonoBehaviour
 {
@@ -27,8 +28,16 @@ public class Health : MonoBehaviour
     public Spawner spawnScript;
     public GameObject gameMaster;
 
-    // Start is called before the first frame update
-    void Start()
+    [Serializable]
+    struct TelemetryData
+    {
+        public int Death;
+        public int Kill;
+    }
+
+
+        // Start is called before the first frame update
+        void Start()
     {
         
         lineRenderer = GetComponent<LineRenderer>();
@@ -45,14 +54,29 @@ public class Health : MonoBehaviour
     {
         gameMaster = GameObject.FindGameObjectWithTag("GameMaster");
         //spawnScript = gameMaster.GetComponent<Spawner>();
-        //If the player loses their health, it respawns them in the center of the map
+        //If the player loses their health, it respawns them at the starting position
         //NOTE: This is temporary until there is a losing condition or respawn points
         if (health <= 0 && gameObject.name.Equals("Player")) {
             Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+
+            // Death Telemetry
+            var data = new TelemetryData
+            {
+                Death = 1
+            };
+            TelemetryLogger.Log(this, "Death", data);
         } 
         //If an enemy loses their health, they dissapear
         else if (health <= 0) {
-           // spawnScript.spawnPoint = Random.Range(0, spawnScript.Spawners.Length);
+            // spawnScript.spawnPoint = Random.Range(0, spawnScript.Spawners.Length);
+
+            //Kill Telemetry
+            var data = new TelemetryData
+            {
+                Kill = 1
+            };
+            TelemetryLogger.Log(this, "Kill", data);
+
             Destroy(gameObject);
         } 
 
