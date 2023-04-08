@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9164129820853648465}
   - component: {fileID: 5224839749839401972}
   - component: {fileID: 8027291780742661950}
+  - component: {fileID: -2039039482616223666}
   m_Layer: 0
   m_Name: Planning_Table
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-2039039482616223666
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8387487186093336299}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.120716855, z: 0.0100000035}
+  m_Center: {x: 0, y: -0.055358447, z: 0}

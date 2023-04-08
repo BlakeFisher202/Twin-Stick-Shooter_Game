@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5734909756305415401}
   - component: {fileID: 8663137450300707660}
   - component: {fileID: 6907768480244590470}
+  - component: {fileID: 9106108417058866570}
   m_Layer: 0
   m_Name: Siren
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9106108417058866570
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4962314389218772563}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000003, y: 0.055941753, z: 0.020000014}
+  m_Center: {x: 0.0000000023283064, y: 0.027070312, z: 9.617305e-17}

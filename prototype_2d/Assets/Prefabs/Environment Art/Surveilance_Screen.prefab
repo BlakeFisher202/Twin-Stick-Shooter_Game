@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1411297722176579313}
   - component: {fileID: 2610456487862479188}
   - component: {fileID: 278874707522543006}
+  - component: {fileID: -5839784012072788874}
   m_Layer: 0
   m_Name: Surveilance_Screen
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-5839784012072788874
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791939390001871947}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05913142, y: 0.01438888, z: 0.020573568}
+  m_Center: {x: 0.024565712, y: -0.000047535403, z: 0}
