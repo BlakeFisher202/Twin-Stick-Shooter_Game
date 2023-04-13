@@ -52,6 +52,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8776033206474424488}
     m_Modifications:
+    - target: {fileID: 7785940315450680966, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fb50c13d94f650d469918604510841af, type: 2}
     - target: {fileID: 8578736096915687251, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
       propertyPath: m_Name
       value: Prison_Bars (8)
@@ -114,6 +118,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8776033206474424488}
     m_Modifications:
+    - target: {fileID: 7785940315450680966, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fb50c13d94f650d469918604510841af, type: 2}
     - target: {fileID: 8578736096915687251, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
       propertyPath: m_Name
       value: Prison_Bars
@@ -176,6 +184,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8776033206474424488}
     m_Modifications:
+    - target: {fileID: 7785940315450680966, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c27f21ec59f25af4e862bdb6102fdb16, type: 2}
     - target: {fileID: 8578736096915687251, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
       propertyPath: m_Name
       value: Prison_Bars (3)
@@ -238,6 +250,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8776033206474424488}
     m_Modifications:
+    - target: {fileID: 7785940315450680966, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fb50c13d94f650d469918604510841af, type: 2}
     - target: {fileID: 8578736096915687251, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
       propertyPath: m_Name
       value: Prison_Bars (12)
@@ -300,6 +316,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8776033206474424488}
     m_Modifications:
+    - target: {fileID: 7785940315450680966, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fb50c13d94f650d469918604510841af, type: 2}
     - target: {fileID: 8578736096915687251, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
       propertyPath: m_Name
       value: Prison_Bars (2)
@@ -362,6 +382,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8776033206474424488}
     m_Modifications:
+    - target: {fileID: 7785940315450680966, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c27f21ec59f25af4e862bdb6102fdb16, type: 2}
     - target: {fileID: 8578736096915687251, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
       propertyPath: m_Name
       value: Prison_Bars (13)
@@ -424,6 +448,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8776033206474424488}
     m_Modifications:
+    - target: {fileID: 7785940315450680966, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c27f21ec59f25af4e862bdb6102fdb16, type: 2}
     - target: {fileID: 8578736096915687251, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
       propertyPath: m_Name
       value: Prison_Bars (5)
@@ -486,6 +514,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8776033206474424488}
     m_Modifications:
+    - target: {fileID: 7785940315450680966, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fb50c13d94f650d469918604510841af, type: 2}
     - target: {fileID: 8578736096915687251, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
       propertyPath: m_Name
       value: Prison_Bars (10)
@@ -548,6 +580,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8776033206474424488}
     m_Modifications:
+    - target: {fileID: 7785940315450680966, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c27f21ec59f25af4e862bdb6102fdb16, type: 2}
     - target: {fileID: 8578736096915687251, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
       propertyPath: m_Name
       value: Prison_Bars (7)
@@ -610,6 +646,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8776033206474424488}
     m_Modifications:
+    - target: {fileID: 7785940315450680966, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c27f21ec59f25af4e862bdb6102fdb16, type: 2}
     - target: {fileID: 8578736096915687251, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
       propertyPath: m_Name
       value: Prison_Bars (9)
@@ -672,6 +712,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8776033206474424488}
     m_Modifications:
+    - target: {fileID: 7785940315450680966, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c27f21ec59f25af4e862bdb6102fdb16, type: 2}
     - target: {fileID: 8578736096915687251, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
       propertyPath: m_Name
       value: Prison_Bars (1)
@@ -734,6 +778,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8776033206474424488}
     m_Modifications:
+    - target: {fileID: 7785940315450680966, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fb50c13d94f650d469918604510841af, type: 2}
     - target: {fileID: 8578736096915687251, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
       propertyPath: m_Name
       value: Prison_Bars (6)
@@ -796,6 +844,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8776033206474424488}
     m_Modifications:
+    - target: {fileID: 7785940315450680966, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fb50c13d94f650d469918604510841af, type: 2}
     - target: {fileID: 8578736096915687251, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
       propertyPath: m_Name
       value: Prison_Bars (4)
@@ -858,6 +910,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8776033206474424488}
     m_Modifications:
+    - target: {fileID: 7785940315450680966, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c27f21ec59f25af4e862bdb6102fdb16, type: 2}
     - target: {fileID: 8578736096915687251, guid: 52815b9412c60e940a27924eac9abaf5, type: 3}
       propertyPath: m_Name
       value: Prison_Bars (11)

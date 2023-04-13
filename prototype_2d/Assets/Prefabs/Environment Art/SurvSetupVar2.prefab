@@ -55,6 +55,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2178092209220702753}
     m_Modifications:
+    - target: {fileID: 278874707522543006, guid: 3176f630dccef384fa60cb353dd75c49, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a9ddffa64136f35409c61ce32a89e98a, type: 2}
     - target: {fileID: 1411297722176579313, guid: 3176f630dccef384fa60cb353dd75c49, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -117,6 +121,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2178092209220702753}
     m_Modifications:
+    - target: {fileID: 127073646605511085, guid: 6917f5986386d22428fac26f28efe47d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fb50c13d94f650d469918604510841af, type: 2}
+    - target: {fileID: 978779141619721157, guid: 6917f5986386d22428fac26f28efe47d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9920e2681f8b79b4faf65df3bc655057, type: 2}
     - target: {fileID: 4133647485025585983, guid: 6917f5986386d22428fac26f28efe47d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -165,6 +177,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Surveilance Control
       objectReference: {fileID: 0}
+    - target: {fileID: 7873386203052775682, guid: 6917f5986386d22428fac26f28efe47d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a9ddffa64136f35409c61ce32a89e98a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6917f5986386d22428fac26f28efe47d, type: 3}
 --- !u!4 &2556037471763777232 stripped
@@ -227,6 +243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair
       objectReference: {fileID: 0}
+    - target: {fileID: 1714339265429162322, guid: 131fd603e04aa754fa2a8c8dca258104, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a22ebafca276fe44ca663a20e6bbcbb3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 131fd603e04aa754fa2a8c8dca258104, type: 3}
 --- !u!4 &2321311792459609065 stripped

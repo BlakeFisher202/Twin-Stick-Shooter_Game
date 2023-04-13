@@ -100,7 +100,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 9468af5040e201740a1750ae6564f6fc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4981a2f93cae8b647982c675ab4a8af4, type: 2}
+      objectReference: {fileID: 2100000, guid: 81b84c6f3a7d5a14aba86dc105c2084a, type: 2}
     - target: {fileID: 919132149155446097, guid: 9468af5040e201740a1750ae6564f6fc, type: 3}
       propertyPath: m_Name
       value: Enemy_Spawn_Door
